@@ -59,11 +59,11 @@
     <main>
       <!-- FIRST SECTION -->
       <section class="first-section">
-        <h1 class="text-hero" data-modal-open>
-          Effective Solutions for Your Business
-        </h1>
+        <h1 class="text-hero">Effective Solutions for Your Business</h1>
 
-        <button type="button" class="hero-button">Order Service</button>
+        <button type="button" class="hero-button" data-modal-open>
+          Order Service
+        </button>
       </section>
       <!-- SECOND SECTION -->
       <section class="second-section">
@@ -430,8 +430,14 @@
     </footer>
 
     <!-- MODAL WINDOW -->
-    <div class="backdrop">
-      <div class="modal"></div>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" data-modal-close class="modal-btn">
+          <svg width="8" height="8">
+            <use href="./images/icons.svg#icon-close-btn"></use>
+          </svg>
+        </button>
+      </div>
     </div>
 
     <script src="./js/modal.js"></script>
