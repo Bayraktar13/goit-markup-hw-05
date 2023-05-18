@@ -530,6 +530,8 @@ ul.fourth-section-list > li {
   align-items: center;
   justify-content: center;
   color: var(--linkColor);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fifth-section-links:hover,
@@ -641,11 +643,15 @@ ul.portfolio-buttons > li:last-child {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.model-close-svg:hover,
+.model-close-svg:focus {
+  fill: #ffffff;
+}
+
 .modal-btn:hover,
 .modal-btn:focus {
   background-color: #404bbf;
   border: none;
-  fill: #ffffff;
 }
 
 .model-close-svg {
