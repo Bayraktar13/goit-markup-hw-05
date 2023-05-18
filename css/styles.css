@@ -98,6 +98,49 @@ p {
   padding-bottom: 24px;
 }
 
+/* Для выделения цветом активной вкладки */
+.menu-studio {
+  position: relative;
+
+  color: #404bbf;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  font-family: inherit;
+  display: inline-block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.menu-studio::after {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 4px;
+  left: 0px;
+  bottom: -1px;
+  background: #404bbf;
+  border-radius: 2px;
+  /* Для плавной смены цвета текстового контента */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-portfolio {
+  position: relative;
+
+  color: #404bbf;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  font-family: inherit;
+  display: inline-block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+/*  */
+
 .menu-link:hover,
 .menu-link:focus {
   color: #404bbf;
@@ -122,6 +165,8 @@ p {
   display: inline-block;
   padding-top: 24px;
   padding-bottom: 24px;
+  /* Для плавного изменения цвета текстового контента */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .text-hero {
@@ -150,6 +195,8 @@ p {
   height: 56px;
   border: none;
   margin: 0 auto;
+  /* Для плавной смены цвета фона элементов */
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover {
@@ -431,6 +478,8 @@ ul.fourth-section-list > li {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Для плавной смены цвета фона элементов */
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social {
@@ -534,6 +583,7 @@ ul.portfolio-buttons > li:last-child {
   border-bottom: 1px solid #e7e9fc;
 }
 
+/* Затемненный фон на весь вьюпорт при активации модальки */
 .backdrop {
   position: fixed;
   top: 0;
@@ -545,6 +595,7 @@ ul.portfolio-buttons > li:last-child {
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Моделька не активна и прозрачна, пока ее не активирует кнопка героя */
 .is-hidden {
   /* Прозрачность */
   opacity: 0;
@@ -557,7 +608,7 @@ ul.portfolio-buttons > li:last-child {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50% -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
   width: 408px;
   min-height: 576px;
   background-color: #fcfcfc;
@@ -565,17 +616,38 @@ ul.portfolio-buttons > li:last-child {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
+  /* Задает анимационный эффект для изменения значений свойств стиля */
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
   top: 24px;
   right: 24px;
   width: 24px;
   height: 24px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  cursor: pointer;
+  /* Задает анимационный эффект для изменения значений свойств стиля */
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: #404bbf;
+  border: none;
+  fill: #ffffff;
+}
+
+.model-close-svg {
+  fill: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
